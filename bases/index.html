@@ -10,12 +10,10 @@
   <body>
     <!-- Control absoluto de este div -->
     <div id="myApp">
-      <ul style="list-style: none">
-        <li v-for="({ quote, author}, index) in quotes">
-          <span>{{index + 1}}.- {{ quote}}</span>
-          <blockquote>-{{ author}}</blockquote>
-        </li>
-      </ul>
+      <h3>{{ quote }}</h3>
+      <p>-{{ author }}</p>
+
+      <button v-on:click="changeQuote">Change quote</button>
     </div>
 
     <script src="app.js"></script>
