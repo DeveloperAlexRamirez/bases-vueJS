@@ -7,7 +7,7 @@ const app = Vue.createApp({
   // Component State
   data() {
     return {
-      quote: 'What time it is?',
+      quote: 'What time is it?',
       author: 'Peter',
     };
   },
