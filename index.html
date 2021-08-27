@@ -5,24 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VueJs</title>
+    <link rel="stylesheet" href="styles.css" />
     <script src="https://unpkg.com/vue@next"></script>
   </head>
   <body>
     <!-- Control absoluto de este div -->
     <div id="myApp">
+      <h1>I'm learning VueJS {{ message }}</h1>
+      <input
+        type="text"
+        v-model="message"
+        v-on:keypress.enter="addQuote"
+        placeholder="Write here"
+      />
+
+      <hr />
       <ul style="list-style: none">
         <li v-for="({ quote, author}, index) in quotes">
           <span>{{index + 1}}.- {{ quote}}</span>
-          <blockquote>-{{ author}}</blockquote>
+          <blockquote v-show="author">-{{ author }}</blockquote>
         </li>
       </ul>
-
-      <span v-bind:title="message">
-        Hover your mouse over me for a few seconds to see my dynamically bound
-        title!
-      </span>
+      <span v-if="seen">Now you seen me</span>
     </div>
-
     <script src="app.js"></script>
   </body>
 </html>

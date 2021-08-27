@@ -32,7 +32,15 @@ const app = Vue.createApp({
   data() {
     return {
       quotes,
+      seen: true,
+      message: '',
     };
+  },
+
+  methods: {
+    addQuote() {
+      this.quotes.unshift({ quote: this.message });
+    },
   },
 });
 
